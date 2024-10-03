@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_result_results",
+  "info": {
+    "displayName": "Result",
+    "icon": "american-sign-language-interpreting"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "college": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "kind": "collectionType",
+  "collectionName": "competitions",
+  "info": {
+    "singularName": "competition",
+    "pluralName": "competitions",
+    "displayName": "competitions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "sponsor": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "regEnd": {
+      "type": "date"
+    },
+    "guidelines": {
+      "type": "component",
+      "repeatable": true,
+      "component": "events.guidlines"
+    },
+    "contacts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contacts.contacts"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "posterImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "guidelinesPdf": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "eventDate": {
+      "type": "date"
+    },
+    "regFee": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "General",
+        "Chemical",
+        "Civil",
+        "Computer Science",
+        "Electrical",
+        "Electronics",
+        "Finance",
+        "Gaming",
+        "Mechanical",
+        "Physics",
+        "Research",
+        "Robotics",
+        "Misc",
+        "Management"
+      ]
+    },
+    "prizesWorth": {
+      "type": "string"
+    },
+    "comingSoon": {
+      "type": "boolean",
+      "default": true
+    },
+    "showRegFee": {
+      "type": "boolean",
+      "default": true
+    },
+    "regLink": {
+      "type": "string",
+      "required": true
+    },
+    "tathvaIdtype": {
+      "type": "boolean",
+      "default": true
+    },
+    "regClosed": {
+      "type": "boolean"
+    },
+    "isTeamCompetition": {
+      "type": "boolean"
+    },
+    "minTeamSize": {
+      "type": "integer"
+    },
+    "maxTeamSize": {
+      "type": "integer"
+    },
+    "competition_access": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::competition-access.competition-access",
+      "inversedBy": "competition"
+    }
+  }
+}

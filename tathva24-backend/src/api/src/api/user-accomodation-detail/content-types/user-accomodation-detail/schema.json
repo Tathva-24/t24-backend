@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_accomodation_details",
+  "info": {
+    "singularName": "user-accomodation-detail",
+    "pluralName": "user-accomodation-details",
+    "displayName": "userAccomodationDetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "receipt": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "transactionId": {
+      "type": "string"
+    },
+    "data": {
+      "type": "json"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "bookedAccomodation"
+    },
+    "cnrVerified": {
+      "type": "boolean"
+    }
+  }
+}

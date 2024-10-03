@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_speaker_about_speaker_abouts",
+  "info": {
+    "displayName": "speakerAbout"
+  },
+  "options": {},
+  "attributes": {
+    "speakerInfo": {
+      "type": "string"
+    }
+  }
+}

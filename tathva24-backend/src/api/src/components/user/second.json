@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_user_seconds",
+  "info": {
+    "displayName": "Second"
+  },
+  "options": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    }
+  }
+}
