@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_user_thirds",
+  "info": {
+    "displayName": "Third"
+  },
+  "options": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    }
+  }
+}

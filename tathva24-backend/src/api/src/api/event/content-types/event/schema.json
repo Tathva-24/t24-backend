@@ -1,0 +1,121 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "isTeamEvent": {
+      "type": "boolean"
+    },
+    "regEndDate": {
+      "type": "datetime",
+      "default": "1969-12-31T18:30:00.000Z"
+    },
+    "regPrice": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "minTeamSize": {
+      "type": "integer"
+    },
+    "maxTeamSize": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "posterImages": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "isResultPublished": {
+      "type": "boolean"
+    },
+    "contacts": {
+      "displayName": "contacts",
+      "type": "component",
+      "repeatable": true,
+      "component": "contacts.contacts"
+    },
+    "questionInfo": {
+      "displayName": "Events",
+      "type": "component",
+      "repeatable": true,
+      "component": "events.events"
+    },
+    "eventDate": {
+      "type": "date"
+    },
+    "guidelinesPdf": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "prizesWorth": {
+      "type": "string"
+    },
+    "regClosed": {
+      "type": "boolean"
+    },
+    "category": {
+      "type": "string"
+    },
+    "showRegFee": {
+      "type": "boolean"
+    },
+    "detailsRequired": {
+      "type": "json"
+    },
+    "event_admin": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event-access.event-access",
+      "inversedBy": "event"
+    },
+    "regLink": {
+      "type": "string",
+      "required": true
+    },
+    "venue": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_event_details",
+  "info": {
+    "singularName": "user-event-detail",
+    "pluralName": "user-event-details",
+    "displayName": "UserEventDetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "teamMembers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "registeredEvents"
+    },
+    "refCode": {
+      "type": "string"
+    },
+    "submissions": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "userResponses": {
+      "type": "json"
+    },
+    "teamName": {
+      "type": "string"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event.event"
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "receipt": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cnrVerified": {
+      "type": "boolean"
+    },
+    "isAttended": {
+      "type": "boolean"
+    }
+  }
+}

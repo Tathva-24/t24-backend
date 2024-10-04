@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_events_events",
+  "info": {
+    "displayName": "questionInfo",
+    "icon": "anchor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "submissionType": {
+      "type": "enumeration",
+      "enum": [
+        "textInput",
+        "fileInput"
+      ]
+    },
+    "maxFileCount": {
+      "type": "integer"
+    },
+    "maxFileSize": {
+      "type": "integer"
+    }
+  }
+}

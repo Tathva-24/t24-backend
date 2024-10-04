@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lecture_accesses",
+  "info": {
+    "singularName": "lecture-access",
+    "pluralName": "lecture-accesses",
+    "displayName": "LectureAccess"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lecture": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lecture.lecture",
+      "mappedBy": "lecture_access"
+    },
+    "admin_lecture": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "lecture_admin"
+    },
+    "volunteer_lecture": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "lecture_volunteer"
+    }
+  }
+}

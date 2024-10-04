@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_user_firsts",
+  "info": {
+    "displayName": "First",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    }
+  }
+}

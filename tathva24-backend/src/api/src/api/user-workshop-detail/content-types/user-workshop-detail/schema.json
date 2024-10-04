@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_workshop_details",
+  "info": {
+    "singularName": "user-workshop-detail",
+    "pluralName": "user-workshop-details",
+    "displayName": "userWorkshopDetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "workshop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::workshop.workshop"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "registeredWorkshops"
+    },
+    "refCode": {
+      "type": "string"
+    },
+    "isAttended": {
+      "type": "boolean",
+      "default": false
+    },
+    "receipt": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "data": {
+      "type": "json"
+    },
+    "cnrVerified": {
+      "type": "boolean"
+    }
+  }
+}

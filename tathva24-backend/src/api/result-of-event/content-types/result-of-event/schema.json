@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "result_of_events",
+  "info": {
+    "singularName": "result-of-event",
+    "pluralName": "result-of-events",
+    "displayName": "ResultOfEvent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event.event"
+    },
+    "first_": {
+      "type": "string"
+    },
+    "second_": {
+      "type": "string"
+    },
+    "third_": {
+      "type": "string"
+    },
+    "event_": {
+      "type": "string"
+    },
+    "first": {
+      "type": "component",
+      "repeatable": false,
+      "component": "result.result"
+    },
+    "second": {
+      "type": "component",
+      "repeatable": false,
+      "component": "result.result"
+    },
+    "third": {
+      "type": "component",
+      "repeatable": false,
+      "component": "result.result"
+    }
+  }
+}
