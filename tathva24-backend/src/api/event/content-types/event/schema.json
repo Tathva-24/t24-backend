@@ -98,12 +98,6 @@
     "detailsRequired": {
       "type": "json"
     },
-    "event_admin": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::event-access.event-access",
-      "inversedBy": "event"
-    },
     "regLink": {
       "type": "string",
       "required": true

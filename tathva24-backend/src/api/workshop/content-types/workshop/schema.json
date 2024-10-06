@@ -85,12 +85,6 @@
     "regClosed": {
       "type": "boolean"
     },
-    "workshop_access": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::workshop-access.workshop-access",
-      "inversedBy": "workshop"
-    },
     "sponsorLogo": {
       "type": "media",
       "multiple": false,
