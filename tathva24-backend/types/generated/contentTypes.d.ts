@@ -779,6 +779,7 @@ export interface ApiTathvaUserTathvaUser extends Struct.CollectionTypeSchema {
     singularName: 'tathva-user';
     pluralName: 'tathva-users';
     displayName: 'TathvaUser';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -794,15 +795,9 @@ export interface ApiTathvaUserTathvaUser extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     Institute: Schema.Attribute.String;
-    refCode: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 6;
-        maxLength: 6;
-      }>;
-    state: Schema.Attribute.String;
-    district: Schema.Attribute.String;
-    gender: Schema.Attribute.Enumeration<['Male,', 'Female,', 'Other']>;
+    Gender: Schema.Attribute.Enumeration<['M', 'F', 'O']>;
     TathvaID: Schema.Attribute.UID & Schema.Attribute.Required;
+    Phone: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

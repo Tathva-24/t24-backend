@@ -4,7 +4,8 @@
   "info": {
     "singularName": "tathva-user",
     "pluralName": "tathva-users",
-    "displayName": "TathvaUser"
+    "displayName": "TathvaUser",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,27 +27,20 @@
       "type": "string",
       "required": false
     },
-    "refCode": {
-      "type": "string",
-      "minLength": 6,
-      "maxLength": 6
-    },
-    "state": {
-      "type": "string"
-    },
-    "district": {
-      "type": "string"
-    },
-    "gender": {
+    "Gender": {
       "type": "enumeration",
       "enum": [
-        "Male,",
-        "Female,",
-        "Other"
+        "M",
+        "F",
+        "O"
       ]
     },
     "TathvaID": {
       "type": "uid",
+      "required": true
+    },
+    "Phone": {
+      "type": "string",
       "required": true
     }
   }
