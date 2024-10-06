@@ -773,6 +773,51 @@ export interface ApiLectureLecture extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTathvaUserTathvaUser extends Struct.CollectionTypeSchema {
+  collectionName: 'tathva_users';
+  info: {
+    singularName: 'tathva-user';
+    pluralName: 'tathva-users';
+    displayName: 'TathvaUser';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 2;
+        maxLength: 64;
+      }>;
+    Email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    Institute: Schema.Attribute.String;
+    refCode: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 6;
+        maxLength: 6;
+      }>;
+    state: Schema.Attribute.String;
+    district: Schema.Attribute.String;
+    gender: Schema.Attribute.Enumeration<['Male,', 'Female,', 'Other']>;
+    TathvaID: Schema.Attribute.UID & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tathva-user.tathva-user'
+    >;
+  };
+}
+
 export interface ApiWorkshopWorkshop extends Struct.CollectionTypeSchema {
   collectionName: 'workshops';
   info: {
@@ -1216,6 +1261,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
       'api::lecture.lecture': ApiLectureLecture;
+      'api::tathva-user.tathva-user': ApiTathvaUserTathvaUser;
       'api::workshop.workshop': ApiWorkshopWorkshop;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
