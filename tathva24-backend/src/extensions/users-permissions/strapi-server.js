@@ -69,6 +69,8 @@ module.exports = (plugin) => {
 
         };
 
+        
+
 
         const workshops = [], lectures = [], events = [], competitions = []
 
