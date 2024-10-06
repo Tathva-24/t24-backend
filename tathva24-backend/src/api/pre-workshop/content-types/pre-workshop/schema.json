@@ -1,0 +1,111 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pre_workshops",
+  "info": {
+    "singularName": "pre-workshop",
+    "pluralName": "pre-workshops",
+    "displayName": "PreWorkshop",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "CoverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "RegStartDate": {
+      "type": "datetime"
+    },
+    "RegEndDate": {
+      "type": "datetime"
+    },
+    "RegPrice": {
+      "type": "decimal"
+    },
+    "MaxRegCount": {
+      "type": "integer"
+    },
+    "CurrRegCount": {
+      "type": "integer"
+    },
+    "Contacts": {
+      "displayName": "Contacts",
+      "type": "component",
+      "repeatable": true,
+      "component": "user.contacts"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Name"
+    },
+    "Announcements": {
+      "type": "richtext"
+    },
+    "PosterImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Web Development",
+        "Product Development",
+        "Robotics",
+        "Web 3.0",
+        "Digital Designing",
+        "Miscellaneous"
+      ]
+    },
+    "Venue": {
+      "type": "string"
+    },
+    "RegClosed": {
+      "type": "boolean"
+    },
+    "SponsorLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Timing": {
+      "type": "richtext"
+    },
+    "RegLink": {
+      "type": "string",
+      "required": true
+    },
+    "EventDate": {
+      "type": "date"
+    },
+    "EventTime": {
+      "type": "string"
+    }
+  }
+}
