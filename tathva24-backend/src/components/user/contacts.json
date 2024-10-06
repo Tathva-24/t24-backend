@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_user_contacts",
+  "info": {
+    "displayName": "Contacts"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "PhoneNo": {
+      "type": "string"
+    }
+  }
+}

@@ -773,6 +773,68 @@ export interface ApiLectureLecture extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPreWorkshopPreWorkshop extends Struct.CollectionTypeSchema {
+  collectionName: 'pre_workshops';
+  info: {
+    singularName: 'pre-workshop';
+    pluralName: 'pre-workshops';
+    displayName: 'PreWorkshop';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Schema.Attribute.String;
+    Description: Schema.Attribute.Blocks;
+    CoverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    RegStartDate: Schema.Attribute.DateTime;
+    RegEndDate: Schema.Attribute.DateTime;
+    RegPrice: Schema.Attribute.Decimal;
+    MaxRegCount: Schema.Attribute.Integer;
+    CurrRegCount: Schema.Attribute.Integer;
+    Contacts: Schema.Attribute.Component<'user.contacts', true>;
+    Slug: Schema.Attribute.UID<'Name'>;
+    Announcements: Schema.Attribute.RichText;
+    PosterImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Category: Schema.Attribute.Enumeration<
+      [
+        'Web Development',
+        'Product Development',
+        'Robotics',
+        'Web 3.0',
+        'Digital Designing',
+        'Miscellaneous',
+      ]
+    >;
+    Venue: Schema.Attribute.String;
+    RegClosed: Schema.Attribute.Boolean;
+    SponsorLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Timing: Schema.Attribute.RichText;
+    RegLink: Schema.Attribute.String & Schema.Attribute.Required;
+    EventDate: Schema.Attribute.Date;
+    EventTime: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pre-workshop.pre-workshop'
+    >;
+  };
+}
+
 export interface ApiTathvaUserTathvaUser extends Struct.CollectionTypeSchema {
   collectionName: 'tathva_users';
   info: {
@@ -1256,6 +1318,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
       'api::lecture.lecture': ApiLectureLecture;
+      'api::pre-workshop.pre-workshop': ApiPreWorkshopPreWorkshop;
       'api::tathva-user.tathva-user': ApiTathvaUserTathvaUser;
       'api::workshop.workshop': ApiWorkshopWorkshop;
       'admin::permission': AdminPermission;

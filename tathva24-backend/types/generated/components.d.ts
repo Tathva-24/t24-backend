@@ -31,6 +31,17 @@ export interface UserFirst extends Struct.ComponentSchema {
   };
 }
 
+export interface UserContacts extends Struct.ComponentSchema {
+  collectionName: 'components_user_contacts';
+  info: {
+    displayName: 'Contacts';
+  };
+  attributes: {
+    Name: Schema.Attribute.String;
+    PhoneNo: Schema.Attribute.String;
+  };
+}
+
 export interface TeamTeam extends Struct.ComponentSchema {
   collectionName: 'components_team_teams';
   info: {
@@ -187,6 +198,7 @@ declare module '@strapi/strapi' {
       'user.third': UserThird;
       'user.second': UserSecond;
       'user.first': UserFirst;
+      'user.contacts': UserContacts;
       'team.team': TeamTeam;
       'sponsors.sponsors': SponsorsSponsors;
       'speaker-about.speaker-about': SpeakerAboutSpeakerAbout;
