@@ -94,12 +94,6 @@
       "repeatable": true,
       "component": "speaker-about.speaker-about"
     },
-    "lecture_access": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::lecture-access.lecture-access",
-      "inversedBy": "lecture"
-    },
     "regLink": {
       "type": "string",
       "required": true

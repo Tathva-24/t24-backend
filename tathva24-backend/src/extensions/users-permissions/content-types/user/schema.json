@@ -129,54 +129,6 @@
       "relation": "oneToOne",
       "target": "api::user-accomodation-detail.user-accomodation-detail",
       "mappedBy": "user"
-    },
-    "event_admin": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::event-access.event-access",
-      "inversedBy": "admin_event"
-    },
-    "event_volunteer": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::event-access.event-access",
-      "inversedBy": "volunteer_event"
-    },
-    "competition_admin": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::competition-access.competition-access",
-      "inversedBy": "admin_competition"
-    },
-    "competition_volunteer": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::competition-access.competition-access",
-      "inversedBy": "volunteer_competition"
-    },
-    "workshop_admin": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::workshop-access.workshop-access",
-      "inversedBy": "admin_workshop"
-    },
-    "workshop_volunteer": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::workshop-access.workshop-access",
-      "inversedBy": "volunteer_workshop"
-    },
-    "lecture_admin": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::lecture-access.lecture-access",
-      "inversedBy": "admin_lecture"
-    },
-    "lecture_volunteer": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::lecture-access.lecture-access",
-      "inversedBy": "volunteer_lecture"
     }
   }
 }

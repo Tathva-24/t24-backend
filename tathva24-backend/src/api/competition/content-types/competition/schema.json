@@ -119,12 +119,6 @@
     },
     "maxTeamSize": {
       "type": "integer"
-    },
-    "competition_access": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::competition-access.competition-access",
-      "inversedBy": "competition"
     }
   }
 }
