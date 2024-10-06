@@ -63,12 +63,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "registeredWorkshops": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::user-workshop-detail.user-workshop-detail",
-      "mappedBy": "user"
-    },
     "name": {
       "type": "string"
     },
@@ -103,32 +97,8 @@
     "hostel": {
       "type": "json"
     },
-    "registeredEvents": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::user-event-detail.user-event-detail",
-      "inversedBy": "teamMembers"
-    },
-    "registeredLectures": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::user-lecture-detail.user-lecture-detail",
-      "mappedBy": "user"
-    },
     "branch": {
       "type": "string"
-    },
-    "registeredCompetitions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::user-competitions-detail.user-competitions-detail",
-      "mappedBy": "user"
-    },
-    "bookedAccomodation": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::user-accomodation-detail.user-accomodation-detail",
-      "mappedBy": "user"
     }
   }
 }
