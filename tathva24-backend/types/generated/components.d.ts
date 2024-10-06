@@ -59,18 +59,6 @@ export interface SponsorsSponsors extends Struct.ComponentSchema {
   };
 }
 
-export interface ResultResult extends Struct.ComponentSchema {
-  collectionName: 'components_result_results';
-  info: {
-    displayName: 'Result';
-    icon: 'american-sign-language-interpreting';
-  };
-  attributes: {
-    name: Schema.Attribute.String;
-    college: Schema.Attribute.String;
-  };
-}
-
 export interface SpeakerAboutSpeakerAbout extends Struct.ComponentSchema {
   collectionName: 'components_speaker_about_speaker_abouts';
   info: {
@@ -143,6 +131,18 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface ResultResult extends Struct.ComponentSchema {
+  collectionName: 'components_result_results';
+  info: {
+    displayName: 'Result';
+    icon: 'american-sign-language-interpreting';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    college: Schema.Attribute.String;
+  };
+}
+
 export interface EventsGuidlines extends Struct.ComponentSchema {
   collectionName: 'components_events_guidlines';
   info: {
@@ -189,13 +189,13 @@ declare module '@strapi/strapi' {
       'user.first': UserFirst;
       'team.team': TeamTeam;
       'sponsors.sponsors': SponsorsSponsors;
-      'result.result': ResultResult;
       'speaker-about.speaker-about': SpeakerAboutSpeakerAbout;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
+      'result.result': ResultResult;
       'events.guidlines': EventsGuidlines;
       'events.events': EventsEvents;
       'contacts.contacts': ContactsContacts;
