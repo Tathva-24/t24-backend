@@ -20,10 +20,10 @@ module.exports = {
 	 */
 	bootstrap({ strapi }) {
 		strapi.db.lifecycles.subscribe({
-			models: ['plugin::users-permissions.user'],
+			models: ['api::tathva-user.tathva-user'],
 			async beforeCreate(event) {
-        let count=await strapi.documents('plugin::users-permissions.user').count()
-				event.params.data.tathvaId =
+        let count=await strapi.documents('api::tathva-user.tathva-user').count()
+				event.params.data.TathvaID =
 					`T-${String(count + 1).padStart(6,'0')}`;
 			},
 		})
