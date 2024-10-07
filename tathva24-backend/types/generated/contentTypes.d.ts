@@ -773,6 +773,58 @@ export interface ApiLectureLecture extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPreLecturePreLecture extends Struct.CollectionTypeSchema {
+  collectionName: 'pre_lectures';
+  info: {
+    singularName: 'pre-lecture';
+    pluralName: 'pre-lectures';
+    displayName: 'PreLecture';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Schema.Attribute.String;
+    CoverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    RegStartDate: Schema.Attribute.DateTime;
+    RegEndDate: Schema.Attribute.DateTime;
+    RegPrice: Schema.Attribute.Decimal;
+    MaxRegCount: Schema.Attribute.Integer;
+    CurrRegCount: Schema.Attribute.Integer;
+    Slug: Schema.Attribute.UID;
+    Description: Schema.Attribute.RichText;
+    PosterImages: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    RegClosed: Schema.Attribute.Boolean;
+    EventDateTime: Schema.Attribute.DateTime;
+    SpeakerName: Schema.Attribute.String;
+    SpeakerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    SpeakerDesignation: Schema.Attribute.String;
+    FeaturedSpeaker: Schema.Attribute.Boolean;
+    Venue: Schema.Attribute.String;
+    SpeakerAbout: Schema.Attribute.Component<'user.speaker-about', true>;
+    RegLink: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pre-lecture.pre-lecture'
+    >;
+  };
+}
+
 export interface ApiPreWorkshopPreWorkshop extends Struct.CollectionTypeSchema {
   collectionName: 'pre_workshops';
   info: {
@@ -1318,6 +1370,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
       'api::lecture.lecture': ApiLectureLecture;
+      'api::pre-lecture.pre-lecture': ApiPreLecturePreLecture;
       'api::pre-workshop.pre-workshop': ApiPreWorkshopPreWorkshop;
       'api::tathva-user.tathva-user': ApiTathvaUserTathvaUser;
       'api::workshop.workshop': ApiWorkshopWorkshop;

@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pre_lectures",
+  "info": {
+    "singularName": "pre-lecture",
+    "pluralName": "pre-lectures",
+    "displayName": "PreLecture"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "CoverImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "RegStartDate": {
+      "type": "datetime"
+    },
+    "RegEndDate": {
+      "type": "datetime"
+    },
+    "RegPrice": {
+      "type": "decimal"
+    },
+    "MaxRegCount": {
+      "type": "integer"
+    },
+    "CurrRegCount": {
+      "type": "integer"
+    },
+    "Slug": {
+      "type": "uid"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "PosterImages": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "RegClosed": {
+      "type": "boolean"
+    },
+    "EventDateTime": {
+      "type": "datetime"
+    },
+    "SpeakerName": {
+      "type": "string"
+    },
+    "SpeakerImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "SpeakerDesignation": {
+      "type": "string"
+    },
+    "FeaturedSpeaker": {
+      "type": "boolean"
+    },
+    "Venue": {
+      "type": "string"
+    },
+    "SpeakerAbout": {
+      "displayName": "SpeakerAbout",
+      "type": "component",
+      "repeatable": true,
+      "component": "user.speaker-about"
+    },
+    "RegLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
