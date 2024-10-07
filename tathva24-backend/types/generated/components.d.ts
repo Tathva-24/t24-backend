@@ -10,6 +10,16 @@ export interface UserThird extends Struct.ComponentSchema {
   };
 }
 
+export interface UserSpeakerAbout extends Struct.ComponentSchema {
+  collectionName: 'components_user_speaker_abouts';
+  info: {
+    displayName: 'SpeakerAbout';
+  };
+  attributes: {
+    SpeakerInfo: Schema.Attribute.String;
+  };
+}
+
 export interface UserSecond extends Struct.ComponentSchema {
   collectionName: 'components_user_seconds';
   info: {
@@ -196,6 +206,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'user.third': UserThird;
+      'user.speaker-about': UserSpeakerAbout;
       'user.second': UserSecond;
       'user.first': UserFirst;
       'user.contacts': UserContacts;
