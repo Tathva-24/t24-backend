@@ -22,11 +22,28 @@ module.exports = {
 		strapi.db.lifecycles.subscribe({
 			models: ['api::tathva-user.tathva-user'],
 			async beforeCreate(event) {
-        let count=await strapi.documents('api::tathva-user.tathva-user').count()
+				console.log('hello');
+        			let count=await strapi.documents('api::tathva-user.tathva-user').count()
 				event.params.data.TathvaID =
 					`T-${String(count + 1).padStart(6,'0')}`;
 			},
 		})
+
+		//strapi.db.lifecycles.subscribe({
+		//	models: ['api::workshop.workshop'],
+		//	async afterCreate(event) {
+		//		console.log('hello');
+		//		 await strapi.plugins['email'].services.email.send({
+		//			     to: 'astroanax@outlook.com',
+		//			     from: 'tathva@testing.tathva.org', //e.g. single sender verification in SendGrid
+		//			     subject: 'The Strapi Email plugin worked successfully',
+		//			     text: 'Hello world!',
+		//			     html: 'Hello world!',
+		//		})
+		//	},
+		//})
+
+
 	},
 }
 
