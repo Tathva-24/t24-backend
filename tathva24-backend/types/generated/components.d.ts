@@ -1,5 +1,19 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface TeamTeam extends Struct.ComponentSchema {
+  collectionName: 'components_team_teams';
+  info: {
+    displayName: 'committeeMember';
+    icon: 'arrow-circle-up';
+    description: '';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    image: Schema.Attribute.String;
+    website: Schema.Attribute.String;
+  };
+}
+
 export interface UserThird extends Struct.ComponentSchema {
   collectionName: 'components_user_thirds';
   info: {
@@ -49,20 +63,6 @@ export interface UserContacts extends Struct.ComponentSchema {
   attributes: {
     Name: Schema.Attribute.String;
     PhoneNo: Schema.Attribute.String;
-  };
-}
-
-export interface TeamTeam extends Struct.ComponentSchema {
-  collectionName: 'components_team_teams';
-  info: {
-    displayName: 'committeeMember';
-    icon: 'arrow-circle-up';
-    description: '';
-  };
-  attributes: {
-    name: Schema.Attribute.String;
-    image: Schema.Attribute.String;
-    website: Schema.Attribute.String;
   };
 }
 
@@ -205,12 +205,12 @@ export interface ContactsContacts extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'team.team': TeamTeam;
       'user.third': UserThird;
       'user.speaker-about': UserSpeakerAbout;
       'user.second': UserSecond;
       'user.first': UserFirst;
       'user.contacts': UserContacts;
-      'team.team': TeamTeam;
       'sponsors.sponsors': SponsorsSponsors;
       'speaker-about.speaker-about': SpeakerAboutSpeakerAbout;
       'shared.slider': SharedSlider;
