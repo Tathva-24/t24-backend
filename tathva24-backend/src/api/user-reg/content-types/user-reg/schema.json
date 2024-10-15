@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_regs",
+  "info": {
+    "singularName": "user-reg",
+    "pluralName": "user-regs",
+    "displayName": "UserReg"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phoneNumber": {
+      "required": true,
+      "type": "biginteger"
+    }
+  }
+}
