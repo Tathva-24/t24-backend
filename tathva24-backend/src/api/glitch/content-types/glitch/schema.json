@@ -1,0 +1,101 @@
+{
+  "kind": "collectionType",
+  "collectionName": "glitches",
+  "info": {
+    "singularName": "glitch",
+    "pluralName": "glitches",
+    "displayName": "Glitch"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "coverImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "regStartDate": {
+      "type": "datetime"
+    },
+    "regEndDate": {
+      "type": "datetime"
+    },
+    "regPrice": {
+      "type": "integer"
+    },
+    "maxRegCount": {
+      "type": "integer"
+    },
+    "currRegCount": {
+      "type": "integer"
+    },
+    "contacts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contacts.contacts"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "announcements": {
+      "type": "richtext"
+    },
+    "posterImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "test"
+      ]
+    },
+    "venue": {
+      "type": "string"
+    },
+    "regClosed": {
+      "type": "boolean"
+    },
+    "sponsorLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "timing": {
+      "type": "richtext"
+    },
+    "regLink": {
+      "type": "string"
+    },
+    "eventDate": {
+      "type": "date"
+    },
+    "eventTime": {
+      "type": "string"
+    }
+  }
+}

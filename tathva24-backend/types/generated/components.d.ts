@@ -1,19 +1,5 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface TeamTeam extends Struct.ComponentSchema {
-  collectionName: 'components_team_teams';
-  info: {
-    displayName: 'committeeMember';
-    icon: 'arrow-circle-up';
-    description: '';
-  };
-  attributes: {
-    name: Schema.Attribute.String;
-    image: Schema.Attribute.String;
-    website: Schema.Attribute.String;
-  };
-}
-
 export interface UserThird extends Struct.ComponentSchema {
   collectionName: 'components_user_thirds';
   info: {
@@ -66,6 +52,20 @@ export interface UserContacts extends Struct.ComponentSchema {
   };
 }
 
+export interface TeamTeam extends Struct.ComponentSchema {
+  collectionName: 'components_team_teams';
+  info: {
+    displayName: 'committeeMember';
+    icon: 'arrow-circle-up';
+    description: '';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    image: Schema.Attribute.String;
+    website: Schema.Attribute.String;
+  };
+}
+
 export interface SponsorsSponsors extends Struct.ComponentSchema {
   collectionName: 'components_sponsors_sponsors';
   info: {
@@ -87,6 +87,18 @@ export interface SpeakerAboutSpeakerAbout extends Struct.ComponentSchema {
   };
   attributes: {
     speakerInfo: Schema.Attribute.String;
+  };
+}
+
+export interface ResultResult extends Struct.ComponentSchema {
+  collectionName: 'components_result_results';
+  info: {
+    displayName: 'Result';
+    icon: 'american-sign-language-interpreting';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    college: Schema.Attribute.String;
   };
 }
 
@@ -152,18 +164,6 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
-export interface ResultResult extends Struct.ComponentSchema {
-  collectionName: 'components_result_results';
-  info: {
-    displayName: 'Result';
-    icon: 'american-sign-language-interpreting';
-  };
-  attributes: {
-    name: Schema.Attribute.String;
-    college: Schema.Attribute.String;
-  };
-}
-
 export interface EventsGuidlines extends Struct.ComponentSchema {
   collectionName: 'components_events_guidlines';
   info: {
@@ -205,20 +205,20 @@ export interface ContactsContacts extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'team.team': TeamTeam;
       'user.third': UserThird;
       'user.speaker-about': UserSpeakerAbout;
       'user.second': UserSecond;
       'user.first': UserFirst;
       'user.contacts': UserContacts;
+      'team.team': TeamTeam;
       'sponsors.sponsors': SponsorsSponsors;
       'speaker-about.speaker-about': SpeakerAboutSpeakerAbout;
+      'result.result': ResultResult;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
-      'result.result': ResultResult;
       'events.guidlines': EventsGuidlines;
       'events.events': EventsEvents;
       'contacts.contacts': ContactsContacts;

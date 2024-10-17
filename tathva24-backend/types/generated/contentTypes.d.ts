@@ -723,6 +723,55 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGlitchGlitch extends Struct.CollectionTypeSchema {
+  collectionName: 'glitches';
+  info: {
+    singularName: 'glitch';
+    pluralName: 'glitches';
+    displayName: 'Glitch';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    regStartDate: Schema.Attribute.DateTime;
+    regEndDate: Schema.Attribute.DateTime;
+    regPrice: Schema.Attribute.Integer;
+    maxRegCount: Schema.Attribute.Integer;
+    currRegCount: Schema.Attribute.Integer;
+    contacts: Schema.Attribute.Component<'contacts.contacts', true>;
+    slug: Schema.Attribute.UID;
+    announcements: Schema.Attribute.RichText;
+    posterImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    category: Schema.Attribute.Enumeration<['test']>;
+    venue: Schema.Attribute.String;
+    regClosed: Schema.Attribute.Boolean;
+    sponsorLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    timing: Schema.Attribute.RichText;
+    regLink: Schema.Attribute.String;
+    eventDate: Schema.Attribute.Date;
+    eventTime: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::glitch.glitch'>;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1438,6 +1487,7 @@ declare module '@strapi/strapi' {
       'api::competition.competition': ApiCompetitionCompetition;
       'api::event.event': ApiEventEvent;
       'api::faq.faq': ApiFaqFaq;
+      'api::glitch.glitch': ApiGlitchGlitch;
       'api::global.global': ApiGlobalGlobal;
       'api::lecture.lecture': ApiLectureLecture;
       'api::pre-lecture.pre-lecture': ApiPreLecturePreLecture;
