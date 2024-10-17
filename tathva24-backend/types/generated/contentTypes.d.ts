@@ -524,6 +524,40 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAccommodationRegAccommodationReg
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'accommodation_regs';
+  info: {
+    singularName: 'accommodation-reg';
+    pluralName: 'accommodation-regs';
+    displayName: 'AccommodationReg';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    lastName: Schema.Attribute.String & Schema.Attribute.Required;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    phoneNumber: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    regTime: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    ticketID: Schema.Attribute.UID & Schema.Attribute.Required;
+    ticketType: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::accommodation-reg.accommodation-reg'
+    >;
+  };
+}
+
 export interface ApiCompetitionCompetition extends Struct.CollectionTypeSchema {
   collectionName: 'competitions';
   info: {
@@ -923,6 +957,41 @@ export interface ApiTathvaUserTathvaUser extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::tathva-user.tathva-user'
+    >;
+  };
+}
+
+export interface ApiUserRegUserReg extends Struct.CollectionTypeSchema {
+  collectionName: 'user_regs';
+  info: {
+    singularName: 'user-reg';
+    pluralName: 'user-regs';
+    displayName: 'UserReg';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    lastName: Schema.Attribute.String;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    phoneNumber: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    eventName: Schema.Attribute.String & Schema.Attribute.Required;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    ticketID: Schema.Attribute.UID & Schema.Attribute.Required;
+    regTime: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-reg.user-reg'
     >;
   };
 }
@@ -1365,6 +1434,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
+      'api::accommodation-reg.accommodation-reg': ApiAccommodationRegAccommodationReg;
       'api::competition.competition': ApiCompetitionCompetition;
       'api::event.event': ApiEventEvent;
       'api::faq.faq': ApiFaqFaq;
@@ -1373,6 +1443,7 @@ declare module '@strapi/strapi' {
       'api::pre-lecture.pre-lecture': ApiPreLecturePreLecture;
       'api::pre-workshop.pre-workshop': ApiPreWorkshopPreWorkshop;
       'api::tathva-user.tathva-user': ApiTathvaUserTathvaUser;
+      'api::user-reg.user-reg': ApiUserRegUserReg;
       'api::workshop.workshop': ApiWorkshopWorkshop;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
