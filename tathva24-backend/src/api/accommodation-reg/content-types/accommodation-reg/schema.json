@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "user_regs",
+  "collectionName": "accommodation_regs",
   "info": {
-    "singularName": "user-reg",
-    "pluralName": "user-regs",
-    "displayName": "UserReg",
-    "description": ""
+    "singularName": "accommodation-reg",
+    "pluralName": "accommodation-regs",
+    "displayName": "AccommodationReg"
   },
   "options": {
     "draftAndPublish": false
@@ -17,30 +16,27 @@
       "required": true
     },
     "lastName": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "email": {
       "type": "email",
       "required": true
     },
     "phoneNumber": {
-      "required": true,
-      "type": "biginteger"
-    },
-    "eventName": {
-      "type": "string",
+      "type": "biginteger",
       "required": true
     },
-    "price": {
-      "type": "decimal",
+    "regTime": {
+      "type": "datetime",
       "required": true
     },
     "ticketID": {
       "type": "uid",
       "required": true
     },
-    "regTime": {
-      "type": "datetime",
+    "ticketType": {
+      "type": "string",
       "required": true
     }
   }
